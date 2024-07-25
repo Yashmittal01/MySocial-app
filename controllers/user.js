@@ -61,7 +61,7 @@ const sendmail = async(name, email, token)=>{
             from: process.env.USER,
             to: email,
             subject: "reset password",
-            html: 'Hii you can reset your password <a href="http://127.0.0.1:3000/reset-password?token='+token+'"> click here </a>'
+            html: 'Hii you can reset your password <a href="https://mysocial-app.onrender.com/reset-password?token='+token+'"> click here </a>'
         }
         transporter.sendMail(mailOptions,function(err,info){
             if(err){
