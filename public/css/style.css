@@ -1,0 +1,131 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.del-btn{
+    height: 30px;
+    width: 61px;
+    border-radius: 5px;
+    background-color: #fe424d;
+    color: #ebebeb;
+}
+.container{
+    flex: 1;
+}
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info{
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    text-align: center;
+}
+.f-info-links, .f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.f-info-socials{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.f-info-socials i{
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-text p{
+    font-weight: 400 !important;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    font-style: italic !important;
+}
+.listing-link{
+    text-decoration: none;
+}
+
+.add-btn{
+    background-color: #fe424d !important;
+    border: none;
+}
+.show-img{
+    height: 28rem !important;
+}
+.heading:hover{
+    text-decoration: underline; 
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.danger{
+    display: flex;
+    justify-content: center;
+}
+.danger-sign{
+    height: 1.5rem;
+    margin-right: .2rem;
+}
+.display{
+    size: 10% !important;
+}
+.like-comment i {
+    justify-content: space-between;
+    margin-left: -50% ;
+    cursor: pointer; 
+}
+
+.like-comment i:last-child {
+    margin-right: 0;
+}
+.like-comment{
+    display: flex;
+}
+.like-comment button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.comment{
+    display:flex;
+}
+.comtext{
+    margin-right: 5%;
+}

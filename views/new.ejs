@@ -1,0 +1,22 @@
+<% layout("/layout/boilerplate") %>
+<br><br>
+<div class="row"> 
+    <div class="col-8 offset-2">
+        <body>
+            <h1>Create New Post</h1>
+            <form method="post" action="/listing" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="Image" class="form-label">Image</label>
+                    <input name="listing[image]" type="file" class="form-control">
+                    <input type="hidden" name="listing[likes]">
+                </div>
+                <div class="mb-3">
+                    <label for="caption" class="form-label">Caption</label>
+                    <textarea name="listing[caption]" placeholder="Enter caption" type="text" class="form-control" required></textarea>
+                    <div class="invalid-feedback">Please provide a short description</div>
+                <button class="btn btn-dark add-btn mt-3">Post</button>
+            </form>
+            <br><br><br><br>
+        </body>
+    </div>
+</div>

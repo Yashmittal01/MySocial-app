@@ -1,0 +1,24 @@
+<% layout("/layout/boilerplate") %>
+<br>
+<div class="row "> 
+    <div class="col-8 offset-2">
+        <body>
+            <h2>Edit Listing</h2>
+            <form method="POST" action="/listing/<%= onelisting._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="caption" class="form-label">Caption</label>
+                    <textarea name="listing[caption]" class="form-control" required><%= onelisting.caption %></textarea>
+                    <div class="invalid-feedback">Please provide a short caption</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="Image" class="form-label">Upload new image</label>
+                    <input name="listing[image]" type="file" class="form-control">
+                    <div class="invalid-feedback">Enter a valid image</div>
+                </div>
+                <button class="btn btn-dark add-btn">edit</button>
+                <br><br><br><br>
+            </form>
+        </body>
+    </div>
+</div>

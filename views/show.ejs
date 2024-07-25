@@ -1,0 +1,61 @@
+
+<% layout("/layout/boilerplate") %>
+<body>
+<div class="row">
+    <div class="col-8 offset-lg-4 offset-sm-1 offset-md-3 offset-xs-1" >
+        <div class="listing-card" style="width: 30em;">
+            <img src="<%= onelisting.image.url %>" class="card-img-top show-img mt-1" alt="image" >
+                <div class="card-body">
+                    
+                  <p class="card-text mt-2">
+                    <u><b>User</u>: </b><i>@<%= onelisting.owner.username%><br></i>
+                    <u><b>Caption</u>: </b>
+                        <%= onelisting.caption %>
+                    <br>
+                </p>
+                 <% if(curruser&& curruser._id.equals(onelisting.owner._id)){ %>
+                    <div class="buttons mb-5">
+                        <a class="btn btn-dark add-btn" href="/listing/<%=onelisting._id%>/edit">Edit</a>
+                        <form method="post" action="/listing/<%=onelisting._id%>?_method=delete"><button class="btn btn-dark add-btn">Delete</button></form>
+                    </div>
+                <% } %> 
+                </div>
+            </div>
+        </div>
+        <p><b>All Comments</b></p>
+        <div class="row">
+        <% for(comment of onelisting.comment){ %>
+                <div class="card review-card col-5 ms-3 mb-3">
+                    <div class="card-body">
+                        <p class="card-title"><b>User: </b>@<%= comment.author.username    %></p>
+                        <p class="card-text"><b>Comment: </b><%= comment.Comment %></p>
+                    </div>
+                    <% if(curruser && comment.author._id.equals(curruser._id)) {%>
+                        <form class="mb-3 mt-1" method="post" action="/listing/<%= onelisting._id%>/comment/<%= comment._id %>?_method=delete">
+                            <button class="del-btn ">Delete</button>
+                        </form>
+                    <% } %>
+                </div>
+        <% } %>
+        </div>
+        <br>
+        <% if(curruser){ %>
+        <div class="col-8 offset-3 mb-3 mt-3">
+            <form action="/listing/<%= onelisting._id %>/comment" method="post" novalidate class="needs-validation">
+                <label class="form-label">Comment</label>
+                <div class="comment">
+                    <textarea name="comment[Comment]" class="form-control comtext" id="comment" rows="1" col="2" required></textarea>
+                    <div class="invalid-feedback">Please enter a comment</div>
+
+                    <button class="btn btn-dark add-btn">Comment</button>
+
+                </div>
+            </form> 
+        </div>
+        <% } %>
+        
+        
+        </body>
+    </div>
+</div>
+

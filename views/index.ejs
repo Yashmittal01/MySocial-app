@@ -1,0 +1,36 @@
+
+<% layout("/layout/boilerplate") %>
+<body> 
+    <div class="row">
+        <div class="col-4 offset-4">
+        <% for(let listing of alllisting) {%>
+            <h6><i><h6>@<%= listing.owner.username %></h6></i></h6>
+            <a href="/listing/<%= listing._id%>" class="listing-link">
+                <div class="card col listing-card">
+                    <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem;">
+                        <div class="card-body">
+                            <b><p class="card-text">Caption:</b> <%= listing.caption %><br>
+                            </p>
+                        </div>
+                    </a>
+                        <div class="like-comment">
+                            <form method="POST" action="/listing/<%= listing._id %>/like?_method=PUT">
+                                <%= listing.likes %>                                
+                                <button>
+                                    <i class="fa-regular fa-heart fa-lg"></i>
+                                </button>
+                            </form>
+                            <form method="get" action="/listing/<%= listing._id %>">
+                            <button>
+                                <i class="fa-regular fa-comment fa-lg"></i>   
+                            </button>   
+                            </form>
+
+                        </div>
+                </div>
+            <hr>
+        <%}%>
+    </div>
+    </div>
+</body>
+
